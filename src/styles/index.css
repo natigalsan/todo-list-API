@@ -10,3 +10,12 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+body {
+    background-color: beige;
+}
+.container {
+    width: 300px;
+    background-color: white;
+    border-style: solid;
+}
