@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react/cjs/react.production.min";
+import React, { useState, useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
@@ -7,19 +6,31 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 
 const Home = () => {
-	const [input, addInput] = useState([]);
+	const [input, setInput] = useState([]);
 	useEffect(() => {
-		return (
-			<div>
-				<h1 className="text-center mt-5 ">TODOS</h1>
-				<div className="container d-flex justify-content-center">
-					<button onClick={addInput(...input, "")}></button>
-					<input type="text" />
-					<i class="fas fa-trash-alt"></i>
-				</div>
+		console.log(input);
+	}, [input]);
+	return (
+		<div>
+			<h1 classNameName="text-center mt-5 ">TODOS</h1>
+
+			<div classNameName="container d-flex justify-content-center">
+				<button
+					onClick={() => {
+						setInput([...input, value]);
+					}}>
+					Ok
+				</button>
+				<input
+					type="text"
+					OnChange={(e) => setInput(e.target.value)}
+					value={input}
+					placeholder="Please, write something"
+				/>
+				<i className="fas fa-trash-alt"></i>
 			</div>
-		);
-	}, []);
+		</div>
+	);
 };
 
 export default Home;
