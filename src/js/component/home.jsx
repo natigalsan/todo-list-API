@@ -1,34 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
+import AddList from "./addLista.jsx";
+import Header from "./header.jsx";
 
 const Home = () => {
-	const [lista, setLista] = useState("");
-
-	const [input, setInput] = useState([]);
+	
 	// useEffect(() => {
 	// 	console.log(lista);
 	// }, [lista]);
 
 	return (
 		<div className="container-fluid">
-			<h1>Lista de Tareas</h1>
-			<input
-				type="text"
-				onChange={(e) => setInput(e.target.value)}
-				value={input}
-				placeholder="Please, write something."
-			/>
-			<button
-				onClick={() => {
-					setLista([...lista, input]);
-				}}>
-				Ok
-			</button>
+			<Header/>
 			<hr />
+
 			<div className="tabla">
 				<div className="row">
 					<div className="col-1"></div>
