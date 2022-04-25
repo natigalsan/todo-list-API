@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-import AddList from "./addLista.jsx";
-import Header from "./header.jsx";
 
 const Home = () => {
-	
-	// useEffect(() => {
-	// 	console.log(lista);
-	// }, [lista]);
+
+	const [input, setInput] = useState([]);
+	const [lista, setLista] = useState("");
+
+	useEffect(() => {
+		console.log(lista);
+	}, [lista]);
 
 	return (
 		<div className="container-fluid">
-			<Header/>
+			<h1>Lista de Tareas</h1>
+			<input
+				type="text"
+				onChange={(e) => setInput(e.target.value)}
+				value={input}
+				placeholder="Please, write something."
+			/>
+			 
+			<button
+				className="button pink"
+				onClick={() => {
+					setLista([...lista, input]);
+				}}>
+				Ok
+			</button>
 			<hr />
 
 			<div className="tabla">
