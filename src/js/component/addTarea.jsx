@@ -13,15 +13,15 @@ export const AddTarea = ({ Tareas }) => {
 								</div>
 								<div className="col-3">
 									<button
-									// onClick={function borrar(i){
-									// 	let re = Tareas.filter((e, index) => {
-									// 		return index !=i;
-									// 	});
-									// 	setLista(re); 
-									// }}
-									>
+										onClick={function borrar(i) {
+											let re = lista.filter(
+												(valor, index) => {
+													return index != i;
+												}
+											);
+											setLista(re);
+										}}>
 										<i className="far fa-trash-alt"></i>
-
 									</button>
 								</div>
 							</div>

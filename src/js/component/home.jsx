@@ -5,7 +5,6 @@ const Home = () => {
 	const [input, setInput] = useState("");
 	const [lista, setLista] = useState([]);
 
-	
 	useEffect(() => {
 		console.log(lista);
 	}, [lista]);
