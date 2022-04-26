@@ -6,12 +6,18 @@ export const AddTarea = ({ Tareas }) => {
 			<div className="row">
 				{Tareas.map((e, i) => {
 					return (
-						<div key={i}>
-							{e}
-							<button>
-								<i class="far fa-trash-alt"></i>
-							</button>
-						</div>
+						<>
+							<div className="row taskList">
+								<div clasName="col-5" key={i}>
+									{e}
+								</div>
+								<div className="col-3">
+									<button>
+										<i className="far fa-trash-alt"></i>
+									</button>
+								</div>
+							</div>
+						</>
 					); //i es la posición de mi elemento e. --> key es la puerta que hace que inicie una nueva posición.
 				})}
 			</div>

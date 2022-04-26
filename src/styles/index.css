@@ -10,12 +10,31 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+@import url("https://fonts.googleapis.com/css2?family=Tapestry&display=swap"); 
+
+*{
+    font-family: 'Tapestry', cursive;
+    color:rgb(126, 28, 28);
+}
 
 body {
     background-color: beige;
 }
-.container {
+#hoja_de_tareas {
+    margin-top: 50px;
     width: 600px;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgba(126, 28, 28, 0.811);
+    min-height: 300px;
+    background-color: white;
 }
+
+hr {
+    background-color: rgba(126, 28, 28, 0.811);
+    height: 10px;
+}
+
+
 
 
