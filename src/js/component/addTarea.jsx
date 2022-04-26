@@ -12,8 +12,16 @@ export const AddTarea = ({ Tareas }) => {
 									{e}
 								</div>
 								<div className="col-3">
-									<button>
+									<button
+									// onClick={function borrar(i){
+									// 	let re = Tareas.filter((e, index) => {
+									// 		return index !=i;
+									// 	});
+									// 	setLista(re); 
+									// }}
+									>
 										<i className="far fa-trash-alt"></i>
+
 									</button>
 								</div>
 							</div>
