@@ -5,9 +5,19 @@ const Home = () => {
 	const [input, setInput] = useState("");
 	const [lista, setLista] = useState([]);
 
+	function conseguirDatos() {
+		fetch(
+			"https://assets.breatheco.de/apis/fake/todos/user/natigalsan",
+			requestOptions
+		)
+			.then((response) => response.json())
+			.then((result) => setLista(result))
+			.catch((error) => console.log("error", error));
+	}
+
 	useEffect(() => {
-		console.log(lista);
-	}, [lista]);
+		conseguirDatos(setLista);
+	}, []);
 
 	return (
 		<div className="container" id="hoja_de_tareas">
