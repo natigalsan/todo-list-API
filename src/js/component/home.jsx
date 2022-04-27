@@ -41,7 +41,7 @@ const Home = () => {
 			</div>
 
 			<div className="taskList">
-				<AddTarea Tareas={lista} />
+				<AddTarea Tareas={lista} setLista={setLista} />
 			</div>
 		</div>
 	);

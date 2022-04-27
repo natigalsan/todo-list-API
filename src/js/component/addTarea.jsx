@@ -1,21 +1,23 @@
 import React, { useEffect } from "react";
 
-export const AddTarea = ({ Tareas }) => {
+export const AddTarea = ({ Tareas, setLista }) => {
 	return (
 		<>
 			<div className="row">
 				{Tareas.map((e, i) => {
+					// denominado un callback (módulo 17)
 					return (
 						<>
 							<div className="row taskList">
-								<div clasName="col-5" key={i}>
+								<div className="col-5" key={i}>
 									{e}
 								</div>
 								<div className="col-3">
 									<button
-										onClick={function borrar(i) {
-											let re = lista.filter(
+										onClick={function () {
+											let re = Tareas.filter(
 												(valor, index) => {
+													console.log(i, index);
 													return index != i;
 												}
 											);
