@@ -1,3 +1,4 @@
+import { object } from "prop-types";
 import React, { useState, useEffect } from "react";
 import { AddTarea } from "./addTarea.jsx";
 
@@ -6,6 +7,10 @@ const Home = () => {
 	const [lista, setLista] = useState([]);
 
 	function conseguirDatos() {
+		var requestOptions = {
+			method: 'GET', 
+			redirect: 'follow'
+		}
 		fetch(
 			"https://assets.breatheco.de/apis/fake/todos/user/natigalsan",
 			requestOptions
@@ -15,7 +20,7 @@ const Home = () => {
 			.catch((error) => console.log("error", error));
 	}
 
-	useEffect(() => {
+	useEffect((setLista) => {
 		conseguirDatos(setLista);
 	}, []);
 
@@ -37,6 +42,14 @@ const Home = () => {
 							value={input}
 							placeholder="Please, write something." //capturo el elemtno en el input
 						/>
+						<button 
+						onClick={()=>{
+							setLista([...lista, {label: tarea, done: false}])
+						}}
+						></button>
+						{lista?.map((object, index)=> {
+							return <li key = {index}>{object.label}</li>
+						})}
 					</div>
 					<div className="col-5">
 						<button
